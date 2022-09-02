@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Credit Card Comparison Calculator: Find The Best Credit Card</title>
+
+<link rel="stylesheet" href="calculator.css" type="text/css" media="all" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" href="logo.png">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="lavender">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Overpass|Source+Sans+Pro&display=swap" rel="stylesheet">
+<script src="https://www.pigly.com/assets/js/moment.js"></script>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e419f4dac2cac001a00d46b&product=inline-share-buttons&cms=sop' async='async'></script>
+<script src="calculator.js"></script>
+
+</head>
+
+<body>
+  <div class="8u 12u$(medium) order1" style="float: right;">
+		<div class="title-Undrline ">
+			<h1><img src="logo.png" class="title-Icon"></img>Compare <span class="thepinkone">Credit Cards</span></h1>
+				<div style="clear: both; font-size: 1;">&nbsp;</div>
+	</div>
+<p>Unsure which credit card offer you should take? Use this calculator to estimate the long-term costs of multiple credit cards which may have varying annual fees, introductory rates, ongoing rates or compounding intervals. </p>
+<p>Enter your initial account balance and the terms for each card then this calculator will use the fixed payments you enter to figure out which card is a better deal. If you make varying payments then try to include your average payment amount to improve the accuracy of the calculation.</p>
+<p>If a particular card does not have any introductory offer you can leave that field blank.</p>
+<form name="calc" method="post" action="#" class="container">
+  <table class="calculation">
+				<thead><tr>
+				<th colspan='3' align='center'>
+				<h2>Your Balance &amp; Payment <span class="thepinkone">Info</span></h2>
+				</th>
+				</tr></thead>
+				<tbody>
+<tr>
+<td colspan="2">Starting balance amount to use to make comparison:</td>
+<td align="center" class="tabs-table">
+<input name="principal" class="txtbox-Area" type="number" step="0.01" onKeyUp="clear_results(this.form);computeForm(this.form)" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="10000" size="15" />
+</td>
+</tr>
+
+<tr>
+<td colspan="2">Monthly payment amount:<br />
+<font size='-1'>Must be greater than monthly interest charge</font></td>
+<td align="center" class="tabs-table">
+<input name="payment" class="txtbox-Area" type="number" step="0.01" onKeyUp="clear_results(this.form);computeForm(this.form)" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="400" size="15" />
+</td>
+</tr>
+</tbody>
+</table>
+
+
+  <table class="calculation">
+				<thead><tr>
+				<th align='center'>
+				<h2>Compare <span class="thepinkone">Cards</span></h2>
+				</th>
+				<th align='center'>
+				<h2 class="t-alignR">Card <span class="thepinkone">#1</span></h2>
+				</th>
+				<th align='center'>
+				<h2 class="t-alignR">Card <span class="thepinkone">#2</span></h2>
+				</th>
+				</tr></thead>
+				<tbody>
+
+<tr>
+<td>Annual fee (optional):</td>
+<td align="left">
+<input name="annFee1"  class="txtbox-Area" type="number" step="0.01" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="0" size="15" />
+</td>
+<td align="left">
+<input name="annFee2"  class="txtbox-Area" type="number" step="0.01" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="0" size="15" />
+</td>
+</tr>
+
+<tr>
+<td>Regular annual interest rate:</td>
+<td align="left">
+<input name="regIntRate1" class="txtbox-Area" type="number" step="any" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="23" size="15" />
+</td>
+<td align="left">
+<input name="regIntRate2" class="txtbox-Area" type="number" step="any" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="15" size="15" />
+</td>
+</tr>
+
+<tr>
+<td>Compounding period:</td>
+<td align="left">
+<select name="compound1" class="txtbox-Area" size="1" onChange="clear_results(this.form);computeForm(this.form)">
+<option value="0">Monthly</option>
+<option value="1">Daily</option>
+</select>
+</td>
+<td align="center">
+<select name="compound2" class="txtbox-Area" size="1" onChange="clear_results(this.form);computeForm(this.form)">
+<option value="0">Monthly</option>
+<option value="1">Daily</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Introductory annual interest rate (optional):</td>
+<td align="center">
+<input name="introIntRate1" class="txtbox-Area" type="number" step="any" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="" size="15" />
+</td>
+<td align="center">
+<input type="number" class="txtbox-Area" step="any" name="introIntRate2" size="15" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" />
+</td>
+</tr>
+
+<tr>
+<td>Term of introductory rate (in months - optional):</td>
+<td align="center">
+<input name="introMonths1" class="txtbox-Area" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="" size="15" />
+</td>
+<td align="center">
+<input type="number" class="txtbox-Area" name="introMonths2" size="15" onKeyUp="clear_results(this.form);computeForm(this.form)"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" />
+</td>
+</tr>
+
+<tr>
+<td colspan=3 align="center" class="sinker">
+<input type="button" value="Calculate" onClick="computeForm(this.form)" class="button new other-btn2"/>
+<input type="reset" value="Reset" class="button new other-btn2"/>
+</td>
+</tr>
+</tbody>
+</table>
+
+  <table class="calculation">
+				<thead><tr>
+				<th colspan='3' align='center'>
+				<h2>Your <span class="thepinkone">Results</span></h2>
+				</th>
+				</tr></thead>
+				<tbody>
+<tr>
+<td>Number of payments untill paid off:</td>
+<td align="center">
+<input type="text" class="txtbox-Area" name="nPer1" size="15" />
+</td>
+<td align="center">
+<input type="text" class="txtbox-Area" name="nPer2" size="15" />
+</td>
+</tr>
+
+<tr>
+<td>Payoff date:</td>
+<td align="center">
+<input type="text" class="txtbox-Area" name="payoffdate1" size="15" />
+</td>
+<td align="center">
+<input type="text" class="txtbox-Area" name="payoffdate2" size="15" />
+</td>
+</tr>
+
+<tr>
+<td>Total costs:</td>
+<td align="center">
+<input type="text" class="txtbox-Area" name="totalCosts1" size="15" />
+</td>
+<td align="center">
+<input type="text" class="txtbox-Area" name="totalCosts2" size="15" />
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</body>
+	</html>

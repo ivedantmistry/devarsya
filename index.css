@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+ body {
+  width: 100 pxvw;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 100px;
+  border-color: white;
+  background: #000000;
+}
+p{
+  text-align: center;
+}
+hr{
+  background-color: purple;
+}
+
+.front {
+  font-size: 10vw;
+  line-height: 13vw;
+  margin: 0;
+  text-align: center;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 200;
+  background: url(https://tse4.mm.bing.net/th?id=OIP.o_SyVkbkgDBDHrYuxzAdNwHaHa&pid=Api&P=0);
+  background-size: 100%;
+  background-repeat: /* REVIEW:  */;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  color: rgba(0,0,0,0.009);
+  animation: zoomout 20s ease 500ms forwards;
+}
+
+@keyframes zoomout {
+  from {
+    background-size: 50%;
+  }
+  to {
+    background-size: 10%;
+  }
+}
+
+
+div{
+ position: fixed;
+ top: 80%;
+ left: 20%;
+ right: auto;
+ margin-left: 28.7%;
+ margin-right: 3.7%;
+ transform: translate(-50%, -50%);
+}
+
+.blink {
+  font-size: 1.5em;
+  line-height: 9vw;
+  font-family: serif;
+  color: #ffffff;
+  text-align: center;
+  animation: animate 1.5s linear infinite;
+}
+.blink:hover{
+    color: cyan;
+}
+
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 0;
+  }
+}
